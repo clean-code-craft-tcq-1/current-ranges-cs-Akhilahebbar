@@ -1,4 +1,4 @@
-﻿using BatteryMeasurement;
+using BatteryMeasurement;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
@@ -54,7 +54,7 @@ namespace BatteryMeasurement_Tests
             bool actualResult = BatteryMeasurement.IsReadListEmptyorNull(emptyReadingsList);
             Assert.IsTrue(actualResult);
         }
-      
+        [TestMethod]
         public void CheckReadingList_WhenListWithValues_ReturnTrue()
         {
             List<int> readingsListWithValues = new List<int>() { 3, 3, 5, 4, 10, 11, 12 };
@@ -62,13 +62,7 @@ namespace BatteryMeasurement_Tests
             Assert.IsFalse(actualResult);
         }
       
-        [TestMethod]
-        public void GetContinuousRangeFromList_WhenListHasCotinuousValue_ReturnTrue()
-        {
-            List<int> readingsListWithValues = new List<int>() { 3, 4, 5, 4, 10, 11, 12 };
-            bool actualResult = BatteryMeasurement.IsReadListhasInvalidValue(readingsListWithValues);
-            Assert.IsTrue(actualResult);
-        }
+       
         [TestMethod]
         public void GivenReadingList_WhenListIsEmpty_FalseIsReturned()
         {
